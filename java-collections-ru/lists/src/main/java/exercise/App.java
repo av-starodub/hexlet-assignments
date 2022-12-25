@@ -9,10 +9,10 @@ public class App {
         if (characterSet.length() < word.length()) {
             return false;
         }
-        var chars = new ArrayList<>(IntStream.range(0, characterSet.length())
+        var charsFromSet = new ArrayList<>(IntStream.range(0, characterSet.length())
                 .mapToObj(characterSet::charAt).toList());
-        for (char s : word.toLowerCase().toCharArray()) {
-            if (!chars.remove(Character.valueOf(s))) {
+        for (char charFromWord : word.toLowerCase().toCharArray()) {
+            if (!charsFromSet.remove(Character.valueOf(charFromWord))) {
                 return false;
             }
         }
