@@ -44,5 +44,6 @@ tasks.withType(JavaCompile) {
 checkstyle {
   toolVersion '9.2.1'
 }
-
+task stage(dependsOn: ['clean', 'installDist'])
+installDist.mustRunAfter clean
 // END
