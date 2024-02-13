@@ -3,6 +3,7 @@ package exercise;
 import java.io.IOException;
 import java.util.HashMap;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -21,15 +22,15 @@ class FileKVTest extends AbstractKeyValueStorageTest {
     private static final Path FILEPATH = Paths.get("src/test/resources/file").toAbsolutePath().normalize();
 
     @BeforeEach
-    public void beforeEach() throws Exception {
+    void beforeEach() throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         String content = mapper.writeValueAsString(new HashMap<String, String>());
         Files.writeString(FILEPATH, content, StandardOpenOption.CREATE);
     }
 
     // BEGIN
-    @AfterEach
-    void clear() throws IOException {
+    @AfterAll
+    static void clear() throws IOException {
         Files.delete(FILEPATH);
     }
 
