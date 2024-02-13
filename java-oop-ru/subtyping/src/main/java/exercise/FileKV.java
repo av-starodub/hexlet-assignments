@@ -4,8 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 // BEGIN
-import static exercise.Utils.*;
-
+import static exercise.Utils.serialize;
+import static exercise.Utils.writeFile;
+import static exercise.Utils.readFile;
+import static exercise.Utils.unserialize;
 
 public class FileKV implements KeyValueStorage {
     private final String pathToFile;
