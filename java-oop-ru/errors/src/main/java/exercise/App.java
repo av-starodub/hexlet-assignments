@@ -7,7 +7,7 @@ public final class App {
             var square = Math.round(circle.getSquare());
             System.out.println(square);
         } catch (NegativeRadiusException e) {
-            System.out.println("Не удалось посчитать площадь");;
+            System.out.println("Не удалось посчитать площадь");
         }
         System.out.println("Вычисление окончено");
     }
